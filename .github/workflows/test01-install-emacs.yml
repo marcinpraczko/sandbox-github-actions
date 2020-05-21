@@ -2,7 +2,7 @@
 
 name: Test01 - Install Emacs
 
-# Controls when the action will run. Triggers the workflow on push or pull request
+# Controls when the action will run. Triggers the workflow on push orHelpe pull request
 # events but only for the master branch
 on:
   push:
@@ -21,6 +21,17 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
+
+    - name: Check available versions
+      run: |
+        ansible --version
+
+    - name: Display workspace details
+      run: |
+        id
+        who
+        pwd
+        ls -la
 
     - name: Install emacs
       run: |
